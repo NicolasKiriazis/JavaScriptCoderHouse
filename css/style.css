@@ -6,6 +6,7 @@
 
 nav {
   background-color: #6ea0dd;
+  height: 70px;
 }
 nav div {
   display: inline-flex;
@@ -23,6 +24,11 @@ nav div ul li {
   color: white;
   font-size: 20px;
   font-family: "Orbitron", sans-serif;
+}
+nav div ul li img {
+  position: absolute;
+  left: 900px;
+  top: 1px;
 }
 
 * {

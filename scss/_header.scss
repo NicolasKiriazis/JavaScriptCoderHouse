@@ -7,6 +7,9 @@
 
 nav {
     background-color: #6ea0dd;
+    height: 70px;
+    
+
 
     div {
         display: inline-flex;
@@ -14,9 +17,12 @@ nav {
         top: 15px;
         right: 50%;
 
+    
+
         ul {
             list-style: none;
 
+        
             li {
                 display: inline-block;
                 margin-left: 15px;
@@ -24,6 +30,15 @@ nav {
                 color: white;
                 font-size: 20px;
                 font-family: 'Orbitron', sans-serif;
+
+                img{
+                    position: absolute;
+                    left: 900px;
+                    top: 1px;
+                    
+                }
+
+                
             }
         }
     }
