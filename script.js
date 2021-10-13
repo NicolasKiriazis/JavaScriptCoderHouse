@@ -47,3 +47,10 @@ if (age < 21) {
 }
 
 console.log("Edad:" + ESPACIO + age)
+
+let ingresenumero = parseInt(prompt("Ingresa un numero para ver su tabla en la consola"))
+
+for (let i = 1; i <= 10; i++){
+    let resultado = ingresenumero * i; 
+    console.log(ingresenumero + ESPACIO + "X" + ESPACIO + i + ESPACIO + "=" + ESPACIO + resultado)
+}
