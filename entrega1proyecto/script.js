@@ -115,7 +115,7 @@ class Game {
             console.log("Puede pasar a buscar su producto por nuestro Local. Gracias por su compra!")
         } else if (preguntaEnvio == "SI") {
             alert("Ingrese Datos para su Envio")
-            
+
             UserName()
             const cp = parseInt(prompt("Ingrese Codigo Postal: Solo Buenos Aires, Caba y Zona Sur"))
             ComprobarCp(cp)
@@ -150,13 +150,14 @@ const BuscarJuegos = (tuArray) => {
 
     //Recibe la entrada por Prompt para la variable search
 
-    const search = prompt("Buscar videojuego por su nombre (Catalogo Disponible en Consola):").toUpperCase()
+    const search = document.getElementById('search').value.toUpperCase()
 
     //Realiza la busqueda con filter para que search conincida con el nombre del objeto
 
     const busqueda = tuArray.filter(obj => obj.name == search)
 
     //Condicional aplicado al Array que nos da la busqueda usando .lenght SI ES MAYOR A 2 //
+
 
 
     if (busqueda.length == 2) {
@@ -222,15 +223,15 @@ const ComprobarCp = (cp) => {
     const codigospostales = [];
 
     codigospostales.push(1602, 1603, 1605, 1606, 1607, 1609, 1636, 1638, 1640, 1641, 1642, 1643, 1644, 1646, 1650, 1651, 1653, 1655, 1657, 1672, 1674, 1676, 1678, 1682, 1684, 1702, 1704, 1752, 1754, 1766, 1768, 1870, 1871, 1872, 1874, 1875, 1822, 1824, 1825, 1826, 1878, 1879, 1876)
-    
-    const codigospostalesordenados = codigospostales.sort((a,b) => a - b)
 
-    
+    const codigospostalesordenados = codigospostales.sort((a, b) => a - b)
 
-    for (codigopostal of codigospostalesordenados){
-        if ((cp > 1000) && (cp <= 1499)){
+
+
+    for (codigopostal of codigospostalesordenados) {
+        if ((cp > 1000) && (cp <= 1499)) {
             console.log("PRECIO DE ENVÍO:" + " " + "$" + 350)
-        } else if ((cp >= 1500) && (cp <= 1879)){
+        } else if ((cp >= 1500) && (cp <= 1879)) {
             console.log("PRECIO DE ENVÍO:" + " " + "$" + 500)
         } else {
             alert("Ingrese un valor valido.")
@@ -244,5 +245,7 @@ const ComprobarCp = (cp) => {
 OrdenarPrecio(allgames)
 
 BuscarJuegos(allgames)
+
+
 
 

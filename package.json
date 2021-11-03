@@ -1,7 +1,6 @@
 {
   "name": "proyecto",
   "version": "1.0.0",
-  "description": "",
   "main": "practica.js",
   "dependencies": {
     "ansi-align": "^3.0.1",
@@ -125,5 +124,6 @@
   "bugs": {
     "url": "https://github.com/NicolasKiriazis/JavaScriptCoderHouse/issues"
   },
-  "homepage": "https://github.com/NicolasKiriazis/JavaScriptCoderHouse#readme"
+  "homepage": "https://github.com/NicolasKiriazis/JavaScriptCoderHouse#readme",
+  "description": ""
 }
