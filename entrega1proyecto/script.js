@@ -150,7 +150,7 @@ const BuscarJuegos = (tuArray) => {
 
     //Recibe la entrada por Prompt para la variable search
 
-    const search = document.getElementById('search').value.toUpperCase()
+    const search = prompt("Busca tu juego:").toUpperCase()
 
     //Realiza la busqueda con filter para que search conincida con el nombre del objeto
 

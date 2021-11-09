@@ -30,13 +30,22 @@
     <header>
 
         <nav>
-            <img src="./assets/zgames-logo-chico.png" className="brand logo" alt="zgames-logo-chico">
+            <a href="index.html"><img src="./assets/zgames-logo-chico.png" className="brand logo" alt="zgames-logo-chico"></a>
             <div>
                 <ul>
-                    <li>Inicio</li>
+                    <a href="index.html">
+                        <li>Inicio</li>
+                    </a>
                     <li>Categorias</li>
                     <li> <a href="cartwidget.html"><img src="./assets/carrito-sm.png" clasName="carrito" alt="carrito">
                         </a> </li>
+                    <li>
+                        <div>
+                        <input type="text" id="search" class="search" placeholder="Busca Tu Juego:">
+                        <button id="btn">Buscar</button>
+                        <small></small>
+                        </div>
+                    </li>
 
                 </ul>
 
@@ -47,9 +56,9 @@
 
 
 
-    <button id="btn">Mostrar Productos</button>
-
-    <div class="container" id="container"></div>
+    <div id="banner"></div>
+    <div id= "container-product"></div>
+    <div id="container"></div>
 
 
     <footer>
@@ -65,7 +74,7 @@
     </footer>
 
 
-    <script src="./interactuandoDom.js"></script>
+    <script src="./segundaEntrega.js"></script>
 </body>
 
 </html>

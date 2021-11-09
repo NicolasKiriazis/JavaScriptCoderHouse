@@ -30,8 +30,55 @@ nav div ul li img {
   top: 1px;
 }
 
-#resultado {
+#imagen {
+  height: 250px;
+  width: 200px;
+  justify-content: center;
+}
+
+#title {
+  font-size: 15px;
+  font-family: "Orbitron", sans-serif;
   text-align: center;
+}
+
+#price {
+  font-size: 20px;
+  font-family: "Orbitron", sans-serif;
+  text-align: center;
+}
+
+#category {
+  font-size: 10px;
+  font-family: "Orbitron", sans-serif;
+  text-align: center;
+}
+
+#stock {
+  font-size: 10px;
+  font-family: "Orbitron", sans-serif;
+  text-align: center;
+}
+
+#container-product {
+  display: inline-block;
+  margin: 50px;
+}
+
+#container {
+  text-align: center;
+}
+#container input {
+  text-align: center;
+  height: 20px;
+  width: 100px;
+}
+
+.results {
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+  font-size: 20px;
+  padding: 10px;
 }
 
 * {
