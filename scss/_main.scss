@@ -56,6 +56,54 @@
     font-family: 'Orbitron', sans-serif;
     font-size: 20px;
     padding: 10px;
+    color: red;
 
 }
 
+#imagen-cart{
+    height: 200px;
+    width: 150px;
+    position: relative;
+    bottom: 100px;
+    left: 35%;
+    
+    
+}
+
+.detalle{
+    position: relative;
+    top: 55px;
+    left: 48%;
+
+}
+
+#title-cart{
+    font-size: 25px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#price-cart{
+    font-size: 20px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.unidades-cart{
+    font-size: 20px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#seguir-comprando{
+    margin: 15px;
+    
+}
+
+#boton-envio{
+    position: relative;
+
+    top: 1300px;
+    left: 90%;
+
+    display: none;
+    
+
+}

@@ -14,49 +14,132 @@ class Game {
 
     }
 
-    compra(){
+    compra() {
 
         //-------------------------Función de Compra----------------------//
 
         const Compra = () => {
+            //--------------------GUARDAR EN LOCAL--------------------------------//
 
-            
+            const carrito = [];
+
+            const Carrito = (product) => {
+
+                if (localStorage.getItem("carrito") == null) {
+                    carrito.push(product)
+                    localStorage.setItem("carrito", JSON.stringify(carrito))
+                } else {
+                    const carritoLleno = JSON.parse(localStorage.getItem("carrito"));
+                    carritoLleno.push(product)
+                    localStorage.setItem("carrito", JSON.stringify(carritoLleno))
+                }
+
+            }
+
+
             //-------------Condicional de Cantidad---------------------//
             const cantidad = document.querySelector("#cantidad").value
 
             if (cantidad > this.stock) {
                 const resultadoCantidad = document.querySelector("#resultado-cantidad")
                 resultadoCantidad.innerHTML = `NO CONTAMOS CON STOCK DISPONIBLE, NOS QUEDAN ${this.stock} UNIDADES`
-    
+
             } else if (cantidad == 1) {
-    
+
                 this.stock = this.stock - 1;
                 const resultadoUnidades = document.querySelector("#resultado-unidades")
-                resultadoUnidades.innerHTML = `X ${this.stock} UNIDADES`
-    
+                resultadoUnidades.innerHTML = `SU PEDIDO ES DE: ${cantidad} UNIDADES. Nos quedan: ${this.stock} UNIDADES.`
+
+                const resultadoPrecio = document.querySelector("#resultado-precio")
+                resultadoPrecio.textContent = `PRECIO FINAL: ${this.price} ARS`
+
+                const botonFinalizar = document.createElement("button")
+                botonFinalizar.setAttribute("id", "finalizar-pedido")
+                botonFinalizar.innerHTML = `<a href="cartwidget.html">Agregar al Carrito</a>`;
+                const seguirComprando = document.createElement("button")
+                seguirComprando.setAttribute("id", "seguir-comprando")
+                seguirComprando.innerHTML = `<a href="index.html">Seguir Comprando</a>`;
+                resultadoPrecio.appendChild(botonFinalizar)
+                resultadoPrecio.appendChild(seguirComprando)
+
+
+                resultadoPrecio.appendChild(botonFinalizar)
+
+                const finalizarPedido = document.querySelector("#finalizar-pedido")
+
+                finalizarPedido.onclick = () => {
+                    
+                    const producto = {
+                        img: this.img,
+                        name: this.name,
+                        unidades: cantidad,
+                        preciofinal: this.price,
+                    }
+
+                    Carrito(producto)
+
+                }
+
             } else if (cantidad == 0) {
                 const resultadoCantidad = document.querySelector("#resultado-cantidad")
                 resultadoCantidad.innerHTML = `INGRESE UN VALOR MAYOR A CERO, NOS QUEDAN ${this.stock} UNIDADES`
-    
-            } else if (cantidad <= -1){
+
+            } else if (cantidad <= -1) {
                 const resultadoCantidad = document.querySelector("#resultado-cantidad")
-                resultadoCantidad.innerHTML = `INGRESE UN VALOR VALIDO, NOS QUEDAN ${this.stock} UNIDADES`
-            }else {
+                resultadoCantidad.innerHTML = `INGRESE UN VALOR VALIDO, NOS QUEDAN ${this.stock} UNIDADES.`
+            } else {
                 this.stock = this.stock - cantidad
                 this.price = this.price * cantidad
+
                 const resultadoUnidades = document.querySelector("#resultado-unidades")
-                resultadoUnidades.innerHTML = `X ${this.stock} UNIDADES`
-    
+                resultadoUnidades.innerHTML = `SU PEDIDO ES DE: ${cantidad} UNIDADES. Nos quedan: ${this.stock} UNIDADES.`
+
+                const resultadoPrecio = document.querySelector("#resultado-precio")
+                resultadoPrecio.textContent = `PRECIO FINAL: ${this.price} ARS`
+
+                const botonFinalizar = document.createElement("button")
+                botonFinalizar.setAttribute("id", "finalizar-pedido")
+                botonFinalizar.innerHTML = `<a href="cartwidget.html">Finalizar Pedido </a>`;
+                const seguirComprando = document.createElement("button")
+                seguirComprando.setAttribute("id", "seguir-comprando")
+                seguirComprando.innerHTML = `<a href="index.html">Seguir Comprando</a>`;
+                resultadoPrecio.appendChild(botonFinalizar)
+                resultadoPrecio.appendChild(seguirComprando)
+
+                const finalizarPedido = document.querySelector("#finalizar-pedido")
+
+                finalizarPedido.onclick = () => {
+                    
+                    const producto = {
+                        img: this.img,
+                        name: this.name,
+                        unidades: cantidad,
+                        preciofinal: this.price,
+                    }
+
+                    Carrito(producto)
+                }
+
             }
 
         }
 
+
+        //--------------------Evento para aplicar los metodos de los objetos--------------//
         const boton = document.querySelector("#cart")
-        boton.onclick = () =>{
+        boton.onclick = () => {
             Compra()
+            const stock = document.getElementById("stock")
+            stock.style.display = "none";
+
+            const input = document.getElementById("cantidad")
+            input.style.display = "none";
+            boton.style.display = "none";
         }
 
     }
+
+
 
 }
 
@@ -178,9 +261,9 @@ const GameCards = (games) => {
         stock.textContent = `Stock: ${game.stock}`;
         stock.setAttribute("id", "stock")
 
-        //--------------------boton carrito----------------//
+        //--------------------boton STOCK----------------//
         let btn = document.createElement("button")
-        btn.textContent = `Comprar:`
+        btn.textContent = `Verificar Stock:`
         btn.setAttribute("id", "cart")
 
         //--------------------Cantidad--------------------//
@@ -202,6 +285,16 @@ const GameCards = (games) => {
         resultadoUnidades.setAttribute("id", "resultado-unidades")
         resultadoUnidades.setAttribute("class", "results")
 
+        let resultadoPrecio = document.createElement("p")
+        resultadoPrecio.setAttribute("id", "resultado-precio")
+        resultadoPrecio.setAttribute("class", "results")
+
+        //---------------BOTON PRECIO PEDIDO---------------//
+
+        const contenedorFinalizador = document.createElement("div")
+        
+
+
         //----------------Llamar contenedor---------------//
 
         const container = document.getElementById("container")
@@ -217,6 +310,8 @@ const GameCards = (games) => {
         container.appendChild(input)
         container.appendChild(resultadoCantidad)
         container.appendChild(resultadoUnidades)
+        container.appendChild(resultadoPrecio)
+        container.appendChild(contenedorFinalizador)
         container.appendChild(btn)
         container.appendChild(stock)
 
@@ -248,6 +343,7 @@ const Busqueda = (games) => {
     //----Activa Metodo Compra--//
     busqueda.map(producto => producto.compra())
 
+    
 }
 
 Banner()
