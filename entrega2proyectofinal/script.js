@@ -55,10 +55,10 @@ class Game {
 
                 const botonFinalizar = document.createElement("button")
                 botonFinalizar.setAttribute("id", "finalizar-pedido")
-                botonFinalizar.innerHTML = `<a href="cartwidget.html">Agregar al Carrito</a>`;
+                botonFinalizar.innerHTML = `<a href="cartwidget.html">Finalizar Pedido</a>`;
                 const seguirComprando = document.createElement("button")
                 seguirComprando.setAttribute("id", "seguir-comprando")
-                seguirComprando.innerHTML = `<a href="index.html">Seguir Comprando</a>`;
+                seguirComprando.innerHTML = `<a href="index.html">Agregar al Carrito y seguir comprando</a>`;
                 resultadoPrecio.appendChild(botonFinalizar)
                 resultadoPrecio.appendChild(seguirComprando)
 
@@ -69,6 +69,21 @@ class Game {
 
                 finalizarPedido.onclick = () => {
                     
+                    const producto = {
+                        img: this.img,
+                        name: this.name,
+                        unidades: cantidad,
+                        preciofinal: this.price,
+                    }
+
+                    Carrito(producto)
+
+                }
+
+                const continuarComprando = document.querySelector("#seguir-comprando")
+
+                continuarComprando.onclick = () => {
+
                     const producto = {
                         img: this.img,
                         name: this.name,
@@ -102,7 +117,7 @@ class Game {
                 botonFinalizar.innerHTML = `<a href="cartwidget.html">Finalizar Pedido </a>`;
                 const seguirComprando = document.createElement("button")
                 seguirComprando.setAttribute("id", "seguir-comprando")
-                seguirComprando.innerHTML = `<a href="index.html">Seguir Comprando</a>`;
+                seguirComprando.innerHTML = `<a href="index.html">Agregar al Carrito y seguir comprando</a>`;
                 resultadoPrecio.appendChild(botonFinalizar)
                 resultadoPrecio.appendChild(seguirComprando)
 
@@ -118,6 +133,21 @@ class Game {
                     }
 
                     Carrito(producto)
+                }
+
+                const continuarComprando = document.querySelector("#seguir-comprando")
+
+                continuarComprando.onclick = () => {
+
+                    const producto = {
+                        img: this.img,
+                        name: this.name,
+                        unidades: cantidad,
+                        preciofinal: this.price,
+                    }
+
+                    Carrito(producto)
+
                 }
 
             }

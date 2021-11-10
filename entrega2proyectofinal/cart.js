@@ -52,14 +52,6 @@ const CrearCompra = (array) => {
 
 }
 
-const botonEnvio = document.createElement("button")
-botonEnvio.setAttribute("id", "boton-envio")
-botonEnvio.textContent ="Calcular Envio";
-
-
-const container = document.querySelector("#container-pedido")
-container.appendChild(botonEnvio)
-
 
 
 CrearCompra(carrito)
