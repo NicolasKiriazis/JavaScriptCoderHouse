@@ -41,12 +41,11 @@ class Game {
             const cantidad = document.querySelector("#cantidad").value
 
             if (cantidad > this.stock) {
-                const resultadoCantidad = document.querySelector("#resultado-cantidad")
-                resultadoCantidad.innerHTML = `NO CONTAMOS CON STOCK DISPONIBLE, NOS QUEDAN ${this.stock} UNIDADES`
-
+                $("#resultado-cantidad").append(`NO CONTAMOS CON STOCK DISPONIBLE, NOS QUEDAN ${this.stock} UNIDADES`)
             } else if (cantidad == 1) {
 
                 this.stock = this.stock - 1;
+                
                 const resultadoUnidades = document.querySelector("#resultado-unidades")
                 resultadoUnidades.innerHTML = `SU PEDIDO ES DE: ${cantidad} UNIDADES. Nos quedan: ${this.stock} UNIDADES.`
 
@@ -68,7 +67,7 @@ class Game {
                 const finalizarPedido = document.querySelector("#finalizar-pedido")
 
                 finalizarPedido.onclick = () => {
-                    
+
                     const producto = {
                         img: this.img,
                         name: this.name,
@@ -113,18 +112,21 @@ class Game {
                 resultadoPrecio.textContent = `PRECIO FINAL: ${this.price} ARS`
 
                 const botonFinalizar = document.createElement("button")
+                
                 botonFinalizar.setAttribute("id", "finalizar-pedido")
                 botonFinalizar.innerHTML = `<a href="cartwidget.html">Finalizar Pedido </a>`;
+                
                 const seguirComprando = document.createElement("button")
                 seguirComprando.setAttribute("id", "seguir-comprando")
                 seguirComprando.innerHTML = `<a href="index.html">Agregar al Carrito y seguir comprando</a>`;
+                
                 resultadoPrecio.appendChild(botonFinalizar)
                 resultadoPrecio.appendChild(seguirComprando)
 
                 const finalizarPedido = document.querySelector("#finalizar-pedido")
 
                 finalizarPedido.onclick = () => {
-                    
+
                     const producto = {
                         img: this.img,
                         name: this.name,
@@ -169,8 +171,6 @@ class Game {
 
     }
 
-
-
 }
 
 // Juegos de Ps4 //
@@ -204,6 +204,7 @@ const Banner = () => {
 
 }
 
+
 const GameCardsMain = (games) => {
 
     games.forEach(game => {
@@ -236,12 +237,16 @@ const GameCardsMain = (games) => {
         //----------------Llamar contenedor---------------//
 
         const container = document.getElementById("container-product")
+
         const product = document.createElement("div")
         product.setAttribute("id", "container-product")
+        product.setAttribute("class", "product")
         product.appendChild(image)
         product.appendChild(title)
         product.appendChild(precio)
         product.appendChild(categoria)
+
+
 
         //---------------Agregar hijos-------------------//
 
@@ -251,7 +256,12 @@ const GameCardsMain = (games) => {
     });
 
 
+
 }
+
+
+
+
 
 //----------------------------------------------------------------//
 
@@ -322,7 +332,7 @@ const GameCards = (games) => {
         //---------------BOTON PRECIO PEDIDO---------------//
 
         const contenedorFinalizador = document.createElement("div")
-        
+
 
 
         //----------------Llamar contenedor---------------//
@@ -373,12 +383,11 @@ const Busqueda = (games) => {
     //----Activa Metodo Compra--//
     busqueda.map(producto => producto.compra())
 
-    
+
 }
 
 Banner()
 GameCardsMain(allgames)
-
 
 const button = document.querySelector("#btn")
 
@@ -394,3 +403,5 @@ button.onclick = () => {
     Busqueda(allgames)
 
 }
+
+

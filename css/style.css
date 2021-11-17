@@ -119,6 +119,19 @@ nav div ul li img {
   position: relative;
   top: 1300px;
   left: 90%;
+  display: none;
+}
+
+.carrito-desplegado {
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+  position: absolute;
+  right: 0%;
+}
+
+.fondo-container {
+  background-color: brown;
 }
 
 * {

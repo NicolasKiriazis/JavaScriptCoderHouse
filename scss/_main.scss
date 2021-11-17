@@ -1,109 +1,104 @@
-
-
-
-#imagen{
+#imagen {
     height: 250px;
     width: 200px;
     justify-content: center;
 }
 
-#title{
+#title {
     font-size: 15px;
-    font-family: 'Orbitron', sans-serif;
+    font-family: "Orbitron", sans-serif;
     text-align: center;
-    
 }
 
-#price{
+#price {
     font-size: 20px;
-    font-family: 'Orbitron', sans-serif;
+    font-family: "Orbitron", sans-serif;
     text-align: center;
-    
 }
 
-#category{
+#category {
     font-size: 10px;
-    font-family: 'Orbitron', sans-serif;
+    font-family: "Orbitron", sans-serif;
     text-align: center;
-    
 }
 
-#stock{
+#stock {
     font-size: 10px;
-    font-family: 'Orbitron', sans-serif;
+    font-family: "Orbitron", sans-serif;
     text-align: center;
-    
 }
 
-#container-product{
-    
+#container-product {
     display: inline-block;
     margin: 50px;
 }
 
-
-#container{
+#container {
     text-align: center;
-    input{
+    input {
         text-align: center;
         height: 20px;
         width: 100px;
     }
 }
 
-.results{
+.results {
     text-align: center;
-    font-family: 'Orbitron', sans-serif;
+    font-family: "Orbitron", sans-serif;
     font-size: 20px;
     padding: 10px;
     color: red;
-
 }
 
-#imagen-cart{
+#imagen-cart {
     height: 200px;
     width: 150px;
     position: relative;
     bottom: 100px;
     left: 35%;
-    
-    
 }
 
-.detalle{
+.detalle {
     position: relative;
     top: 55px;
     left: 48%;
-
 }
 
-#title-cart{
+#title-cart {
     font-size: 25px;
-    font-family: 'Orbitron', sans-serif;
+    font-family: "Orbitron", sans-serif;
 }
 
-#price-cart{
+#price-cart {
     font-size: 20px;
-    font-family: 'Orbitron', sans-serif;
+    font-family: "Orbitron", sans-serif;
 }
 
-.unidades-cart{
+.unidades-cart {
     font-size: 20px;
-    font-family: 'Orbitron', sans-serif;
+    font-family: "Orbitron", sans-serif;
 }
 
-#seguir-comprando{
+#seguir-comprando {
     margin: 15px;
-    
 }
 
-#boton-envio{
+#boton-envio {
     position: relative;
-
     top: 1300px;
     left: 90%;
-
     display: none;
-    
+}
 
+
+.carrito-desplegado{
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+    position: absolute;
+    right: 0%;
+}
+
+.fondo-container{
+    background-color: brown;
 }
