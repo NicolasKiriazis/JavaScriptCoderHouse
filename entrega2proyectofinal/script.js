@@ -3,7 +3,7 @@ const allgames = [];
 
 class Game {
 
-    constructor(id, img, name, price, stock, category) {
+    constructor(id, img, name, price, stock, category, description) {
 
         this.id = id;
         this.img = img;
@@ -11,6 +11,7 @@ class Game {
         this.price = price;
         this.stock = stock;
         this.category = category;
+        this.description = description;
 
     }
 
@@ -71,11 +72,11 @@ class Game {
                     Carrito(producto)
                 }
 
-                $("#finalizar-pedido").on("click", ()=>{
+                $("#finalizar-pedido").on("click", () => {
                     GuardarCarrito()
                 })
 
-                $("#seguir-comprando").on("click", ()=>{
+                $("#seguir-comprando").on("click", () => {
                     GuardarCarrito()
                 })
 
@@ -86,7 +87,9 @@ class Game {
             switch (true) {
 
                 case cantidad == 0:
-                    $("#resultado-cantidad").append(`INGRESE UN VALOR MAYOR A CERO, NOS QUEDAN ${this.stock} UNIDADES`)
+                    $("#resultado-cantidad").append(`INGRESE UN VALOR MAYOR A CERO, NOS QUEDAN ${this.stock} UNIDADES`).animate(
+
+                    )
                     break;
 
                 case cantidad == 1:
@@ -121,19 +124,19 @@ class Game {
 
 }
 
-// Juegos de Ps4 //
+//---------------------- Juegos de Ps4----------------------- //
 
-const fifa22 = new Game(1, "https://i.ibb.co/DW1ZM1b/fifa22ps4.png", 'FIFA 22', 7800, 20, 'PLAYSTATION 4')
-const godofwar = new Game(2, "https://i.ibb.co/XpGf7WR/godofwar4.png", 'GOD OF WAR', 5000, 10, 'PLAYSTATION 4')
-const tlofus = new Game(3, "https://i.ibb.co/jLRLHLq/thelastofus2ps4.png", 'THE LAST OF US 2', 6000, 16, 'PLAYSTATION 4')
-const tsubasa = new Game(4, "https://i.ibb.co/kJx1NCj/captaintsubasaps4.jpg", 'CAPITAN TSUBASA', 6500, 10, 'PLAYSTATION 4')
+const fifa22 = new Game(1, "https://i.ibb.co/DW1ZM1b/fifa22ps4.png", 'FIFA 22', 7800, 20, 'PLAYSTATION 4', 'Esta edición acerca el juego aún más a la realidad gracias a mejoras significativas en la jugabilidad y una nueva temporada de novedades en todos los modos. Con Kylian Mbappé como figura destacada, en esta entrega los jugadores podrán hacer realidad sus sueños en el modo Carrera y llegar más lejos que nunca.')
+const godofwar = new Game(2, "https://i.ibb.co/XpGf7WR/godofwar4.png", 'GOD OF WAR', 5000, 10, 'PLAYSTATION 4', 'Esta entrega está protagonizada por Kratos y Atreus, que deberán sobrevivir en un mundo habitado por dioses y criaturas nórdicas que los pondrán a prueba a cada instante. Ambientada en los entornos más increíbles y peligrosos de la saga, los jugadores podrán disfrutar de una apasionante historia.')
+const tlofus = new Game(3, "https://i.ibb.co/jLRLHLq/thelastofus2ps4.png", 'THE LAST OF US 2', 6000, 16, 'PLAYSTATION 4', 'Esta entrega se desarrolla cinco años después de la catástrofe, cuando Ellie y Joel viven en una tranquila comunidad de sobrevivientes de Wynoming. Los jugadores serán testigos de un violento evento que interrumpe esa paz y experimentarán un viaje en busca de justicia y venganza.')
+const tsubasa = new Game(4, "https://i.ibb.co/kJx1NCj/captaintsubasaps4.jpg", 'CAPITAN TSUBASA', 6500, 10, 'PLAYSTATION 4', 'Este juego de fútbol y acción está basado en la famosa serie de animé, con Óliver y el Nankatsu como principales protagonistas. Los jugadores podrán disfrutar dos increíbles modos de historia: Tsubasa y New Hero, en el que podrán jugar con su propio personaje.')
 
-// Juegos de Ps5//
+// ---------------------Juegos de Ps5-----------------------//
 
-const borderlands = new Game(5, "https://i.ibb.co/1nP08bB/borderlands3ps5.jpg", "BORDERLANDS 3", 10000, 10, "PLAYSTATION 5")
-const godofwarps5 = new Game(6, "https://i.ibb.co/0jM9h0g/godofwarps5.png", 'GOD OF WAR', 9800, 10, 'PLAYSTATION 5')
-const fifa22ps5 = new Game(7, "https://i.ibb.co/3FfbcvL/fifa22ps5.jpg", "FIFA 22", 11000, 25, "PLAYSTATION 5")
-const farcryps5 = new Game(8, "https://i.ibb.co/H7B20jK/farcry6ps5.jpg", "FAR CRY 5", 11500, 15, "PLAYSTATION 5")
+const borderlands = new Game(5, "https://i.ibb.co/1nP08bB/borderlands3ps5.jpg", "BORDERLANDS 3", 10000, 10, "PLAYSTATION 5", 'Más allá de Pandora hay nuevos mundos por conocer y los jugadores tendrán la oportunidad de explorar nuevos espacios hostiles y destruidos, urbanos y naturales, llenos de enemigos pero también de armas y artilugios para vencerlos.')
+const godofwarps5 = new Game(6, "https://i.ibb.co/0jM9h0g/godofwarps5.png", 'GOD OF WAR', 9800, 10, 'PLAYSTATION 5', 'Esta entrega está protagonizada por Kratos y Atreus, que deberán sobrevivir en un mundo habitado por dioses y criaturas nórdicas que los pondrán a prueba a cada instante. Ambientada en los entornos más increíbles y peligrosos de la saga, los jugadores podrán disfrutar de una apasionante historia.')
+const fifa22ps5 = new Game(7, "https://i.ibb.co/3FfbcvL/fifa22ps5.jpg", "FIFA 22", 11000, 25, "PLAYSTATION 5", 'Esta edición acerca el juego aún más a la realidad gracias a mejoras significativas en la jugabilidad y una nueva temporada de novedades en todos los modos. Con Kylian Mbappé como figura destacada, en esta entrega los jugadores podrán hacer realidad sus sueños en el modo Carrera y llegar más lejos que nunca.')
+const farcryps5 = new Game(8, "https://i.ibb.co/H7B20jK/farcry6ps5.jpg", "FAR CRY 5", 11500, 15, "PLAYSTATION 5", 'En una isla tropical, los jugadores encarnarán a Dani Rojas como hombre o mujer y experimentarán una historia que los llevará de ser un ciudadano reacio a un líder que lucha contra el régimen de Anton, empleando armas, vehículos y animales. En PS5 se harán notar las mejoras gráficas y menores tiempos de carga.')
 
 allgames.push(fifa22, godofwar, tlofus, tsubasa, borderlands, godofwarps5, fifa22ps5, farcryps5)
 
@@ -152,168 +155,100 @@ const Banner = () => {
 
 }
 
+const CardsMain = (games) => {
 
-const GameCardsMain = (games) => {
-
-    games.forEach(game => {
-
-        //----------------Creando Imagenes---------------//
-
-        let image = document.createElement("img")
-        image.setAttribute("src", game.img)
-        image.setAttribute("id", "imagen")
+    games.map(game => {
 
 
-        //-------------------Texto-Nombre--------------------//
+        $("#container-product").append(
 
-        let title = document.createElement("h3")
-        title.textContent = game.name;
-        title.setAttribute("id", "title")
+            `
+            <div class ="item">
 
-        //-------------------Texto-Precio-------------------//
+            <a href="itemDetail.html">
 
-        let precio = document.createElement("p")
-        precio.textContent = ` ${game.price} ARS`;
-        precio.setAttribute("id", "price")
+            <div id="item-${game.id}">
 
-        //-------------------Texto-Category-----------------//
+            <img src= ${game.img} id="imagen"></img>
+            <h3 id="title">${game.name}</h3>
+            <p id="price">${game.price}</p>
+            <p id="category">${game.category}</p>
 
-        let categoria = document.createElement("p")
-        categoria.textContent = game.category;
-        categoria.setAttribute("id", "category")
+            </div>
 
-        //----------------Llamar contenedor---------------//
+            </a>
 
-        const container = document.getElementById("container-product")
+            </div>
+            
+            `,
 
-        const product = document.createElement("div")
-        product.setAttribute("id", "container-product")
-        product.setAttribute("class", "product")
-        product.appendChild(image)
-        product.appendChild(title)
-        product.appendChild(precio)
-        product.appendChild(categoria)
+        )
 
+        const ItemDetail = (product) => {
 
+            const detail = [];
 
-        //---------------Agregar hijos-------------------//
+            detail.push(product)
+            localStorage.setItem("item-detail", JSON.stringify(detail))
 
+        }
 
-        container.appendChild(product)
+        $(`#item-${game.id}`).on("click", () => {
+            ItemDetail(game)
+        })
 
-    });
+        $("#container").append($("#container-product"))
 
-
-
+    })
 }
 
-//----------------------------------------------------------------//
+const SearchCards = (games) => {
+    
+    games.map(game =>{
 
-//------------FUNCION QUE CREA LAS CARDS DESPUES DE BUSQUEDA----//
-const GameCards = (games) => {
+        $("#container-product").append(
 
+            `
+            <div class ="item">
 
-    games.forEach(game => {
-        //----------------Creando Imagenes---------------//
+            <a href="itemDetail.html">
 
-        let image = document.createElement("img")
-        image.setAttribute("src", game.img)
-        image.setAttribute("id", "imagen")
+            <div id="item-${game.id}">
 
+            <img src= ${game.img} id="imagen"></img>
+            <h3 id="title">${game.name}</h3>
+            <p id="price">${game.price}</p>
+            <p id="category">${game.category}</p>
 
-        //-------------------Texto-Nombre--------------------//
+            </div>
 
-        let title = document.createElement("h3")
-        title.textContent = game.name;
-        title.setAttribute("id", "title")
+            </a>
 
-        //-------------------Texto-Precio-------------------//
+            </div>
+            
+            `,
 
-        let precio = document.createElement("p")
-        precio.textContent = ` ${game.price} ARS`;
-        precio.setAttribute("id", "price")
+        )
 
-        //-------------------Texto-Category-----------------//
+        const ItemDetail = (product) => {
 
-        let categoria = document.createElement("p")
-        categoria.textContent = game.category;
-        categoria.setAttribute("id", "category")
+            const detail = [];
 
-        //---------------------STOCK-----------------------//
+            detail.push(product)
+            localStorage.setItem("item-detail", JSON.stringify(detail))
 
-        let stock = document.createElement("p")
-        stock.textContent = `Stock: ${game.stock}`;
-        stock.setAttribute("id", "stock")
+        }
 
-        //--------------------boton STOCK----------------//
-        let btn = document.createElement("button")
-        btn.textContent = `Verificar Stock:`
-        btn.setAttribute("id", "cart")
+        $(`#item-${game.id}`).on("click", () => {
+            ItemDetail(game)
+        })
 
-        //--------------------Cantidad--------------------//
-        let input = document.createElement("input")
+        $("#container").append($("#container-product"))
 
-        input.setAttribute("type", "number")
-        input.setAttribute("id", "cantidad")
-        input.setAttribute("placeholder", "Cantidad")
-
-        let resultadoCantidad = document.createElement("p")
-
-        resultadoCantidad.setAttribute("id", "resultado-cantidad")
-        resultadoCantidad.setAttribute("class", "results")
-
-
-        let resultadoUnidades = document.createElement("p")
-
-
-        resultadoUnidades.setAttribute("id", "resultado-unidades")
-        resultadoUnidades.setAttribute("class", "results")
-
-        let resultadoPrecio = document.createElement("p")
-        resultadoPrecio.setAttribute("id", "resultado-precio")
-        resultadoPrecio.setAttribute("class", "results")
-
-        //---------------BOTON PRECIO PEDIDO---------------//
-
-        const contenedorFinalizador = document.createElement("div")
-
-
-
-        //----------------Llamar contenedor---------------//
-
-        const container = document.getElementById("container")
-
-
-        //---------------Agregar hijos-------------------//
-
-
-        container.appendChild(image)
-        container.appendChild(title)
-        container.appendChild(precio)
-        container.appendChild(categoria)
-        container.appendChild(input)
-        container.appendChild(resultadoCantidad)
-        container.appendChild(resultadoUnidades)
-        container.appendChild(resultadoPrecio)
-        container.appendChild(contenedorFinalizador)
-        container.appendChild(btn)
-        container.appendChild(stock)
-
-
-
-    });
-
+    })
 }
-
-//---------------------------------------------------------------//
-
 
 const Busqueda = (games) => {
-
-    //-------------Pone el contenedor en Blanco----------//
-    let contenedor = document.querySelector("#container")
-    contenedor.innerHTML = ` `;
-
 
     //---------Realiza la busqueda y devuelve Array-----//
 
@@ -323,15 +258,14 @@ const Busqueda = (games) => {
 
     //----Crea la card del resultado de la busqueda--//
 
-    GameCards(busqueda)
+    SearchCards(busqueda)
+    console.log(busqueda)
+    
 
-    //----Activa Metodo Compra--//
+    // ----Activa Metodo Compra--//
     busqueda.map(producto => producto.compra())
 
 }
-
-Banner()
-GameCardsMain(allgames)
 
 const button = document.querySelector("#btn")
 
@@ -348,4 +282,101 @@ button.onclick = () => {
 
 }
 
+Banner()
+CardsMain(allgames)
 
+//----------------------------------------------------------------//
+
+
+
+
+
+
+
+
+//------------FUNCION QUE CREA LAS CARDS DESPUES DE BUSQUEDA----//
+// const GameCards = (games) => {
+
+//     games.forEach(game => {
+//         //----------------Creando Imagenes---------------//
+
+//         let image = document.createElement("img")
+//         image.setAttribute("src", game.img)
+//         image.setAttribute("id", "imagen")
+
+//         //-------------------Texto-Nombre--------------------//
+
+//         let title = document.createElement("h3")
+//         title.textContent = game.name;
+//         title.setAttribute("id", "title")
+
+//         //-------------------Texto-Precio-------------------//
+
+//         let precio = document.createElement("p")
+//         precio.textContent = ` ${game.price} ARS`;
+//         precio.setAttribute("id", "price")
+
+//         //-------------------Texto-Category-----------------//
+
+//         let categoria = document.createElement("p")
+//         categoria.textContent = game.category;
+//         categoria.setAttribute("id", "category")
+
+//         //---------------------STOCK-----------------------//
+
+//         let stock = document.createElement("p")
+//         stock.textContent = `Stock: ${game.stock}`;
+//         stock.setAttribute("id", "stock")
+
+//         //--------------------boton STOCK----------------//
+//         let btn = document.createElement("button")
+//         btn.textContent = `Verificar Stock:`
+//         btn.setAttribute("id", "cart")
+
+//         //--------------------Cantidad--------------------//
+//         let input = document.createElement("input")
+
+//         input.setAttribute("type", "number")
+//         input.setAttribute("id", "cantidad")
+//         input.setAttribute("placeholder", "Cantidad")
+
+//         let resultadoCantidad = document.createElement("p")
+
+//         resultadoCantidad.setAttribute("id", "resultado-cantidad")
+//         resultadoCantidad.setAttribute("class", "results")
+
+//         let resultadoUnidades = document.createElement("p")
+
+//         resultadoUnidades.setAttribute("id", "resultado-unidades")
+//         resultadoUnidades.setAttribute("class", "results")
+
+//         let resultadoPrecio = document.createElement("p")
+//         resultadoPrecio.setAttribute("id", "resultado-precio")
+//         resultadoPrecio.setAttribute("class", "results")
+
+//         //---------------BOTON PRECIO PEDIDO---------------//
+
+//         const contenedorFinalizador = document.createElement("div")
+
+//         //----------------Llamar contenedor---------------//
+
+//         const container = document.getElementById("container")
+
+//         //---------------Agregar hijos-------------------//
+//         container.appendChild(image)
+//         container.appendChild(title)
+//         container.appendChild(precio)
+//         container.appendChild(categoria)
+//         container.appendChild(input)
+//         container.appendChild(resultadoCantidad)
+//         container.appendChild(resultadoUnidades)
+//         container.appendChild(resultadoPrecio)
+//         container.appendChild(contenedorFinalizador)
+//         container.appendChild(btn)
+//         container.appendChild(stock)
+
+//     });
+
+// }
+
+//---------------------------------------------------------------//

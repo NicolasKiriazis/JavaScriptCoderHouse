@@ -1,3 +1,5 @@
+
+
 #imagen {
     height: 250px;
     width: 200px;
@@ -28,7 +30,7 @@
     text-align: center;
 }
 
-#container-product {
+.item {
     display: inline-block;
     margin: 50px;
 }
@@ -101,4 +103,39 @@
 
 .fondo-container{
     background-color: brown;
+}
+
+#imagen-detail{
+    height: 300px;
+    width: 250px;
+}
+
+#title-detail{
+    font-size: 40px;
+    font-family: "Orbitron", sans-serif;
+    text-align: center;
+}
+
+#description-detail{
+    font-size: 15px;
+    font-family: "Orbitron", sans-serif;
+    text-align: center;
+}
+
+#price-detail{
+    font-size: 35px;
+    font-family: "Orbitron", sans-serif;
+    text-align: center;
+}
+
+#category-detail{
+    font-size: 20px;
+    font-family: "Orbitron", sans-serif;
+    text-align: center;
+}
+
+#stock-detail{
+    font-size: 20px;
+    font-family: "Orbitron", sans-serif;
+    text-align: center;
 }
