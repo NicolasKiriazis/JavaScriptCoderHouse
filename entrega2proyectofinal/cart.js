@@ -23,13 +23,13 @@ const CrearCompra = (array) => {
 
         //------------------Unidades----------------------//
         let unidades = document.createElement("p")
-        unidades.textContent = `X ${pedido.unidades} UNIDADES` 
+        unidades.textContent = `X ${pedido.stock} UNIDADES` 
         unidades.setAttribute("class", "unidades-cart")
 
         //-------------------Texto-Precio-------------------//
 
         let precio = document.createElement("p")
-        precio.textContent = ` ${pedido.preciofinal} ARS`;
+        precio.textContent = ` ${pedido.price} ARS`;
         precio.setAttribute("id", "price-cart")
 
         const container = document.createElement("div")
