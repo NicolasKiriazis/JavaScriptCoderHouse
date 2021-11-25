@@ -14,7 +14,6 @@ const CrearCompra = (array) => {
         image.setAttribute("src", pedido.img)
         image.setAttribute("id", "imagen-cart")
 
-
         //-------------------imagen--------------------//
 
         let title = document.createElement("h3")
@@ -23,7 +22,7 @@ const CrearCompra = (array) => {
 
         //------------------Unidades----------------------//
         let unidades = document.createElement("p")
-        unidades.textContent = `X ${pedido.stock} UNIDADES` 
+        unidades.textContent = `X ${pedido.stock} UNIDADES`
         unidades.setAttribute("class", "unidades-cart")
 
         //-------------------Texto-Precio-------------------//
@@ -41,7 +40,6 @@ const CrearCompra = (array) => {
         container.appendChild(precio)
 
         const containerpedido = document.querySelector("#container-pedido")
-        
 
         containerpedido.appendChild(container)
         containerpedido.appendChild(image)
@@ -52,7 +50,19 @@ const CrearCompra = (array) => {
 
 }
 
-
-
 CrearCompra(carrito)
 
+// const SumarPrecio = (carrito) => {
+    
+//     carrito.map(item =>{
+//         let precios = [];
+//         precios.push(item.price)
+        
+
+//         console.log(precios)
+//         precios.
+//     })
+
+// }
+
+// SumarPrecio(carrito)

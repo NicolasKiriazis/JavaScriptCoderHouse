@@ -15,6 +15,7 @@ class Game {
 
     }
 
+    
 }
 
 //---------------------- Juegos de Ps4----------------------- //
@@ -91,6 +92,8 @@ const CardsMain = (games) => {
         })
 
         $("#container").append($("#container-product"))
+
+        
 
     })
 }

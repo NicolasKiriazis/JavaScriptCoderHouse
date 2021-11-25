@@ -35,7 +35,9 @@ $(() => {
             `<div id="alerta">
             <h2>Pedido: ${item.name} X ${cantidad} UNIDADES $ ${item.price} </h2>
             <button id="cerrar">Cerrar</button>
+            <a href="cartwidget.html">
             <button id="agregar-carrito">Agregar al Carrito</button>
+            </a>
             </div>`
         )
 
@@ -106,7 +108,7 @@ $(() => {
                 const newItem = {
                     img: item.img,
                     name: item.name,
-                    stock: item.stock, 
+                    stock: `${cantidad}`, 
                     price: item.price,
                 }
                 
